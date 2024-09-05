@@ -1,0 +1,178 @@
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 30px;
+}
+
+.logo img {
+    height: 50px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ffcc00;
+}
+
+/* Hero Section */
+.hero {
+    background-size: cover;
+    background-position: center;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    position: relative;
+    cursor: pointer;
+    min-height: 90.7vh;
+    
+    /* Animation to change background color */
+    animation: imageChange 15s infinite;
+}
+
+.hero-text {
+    position: relative;
+    z-index: 1;
+}
+
+.hero h1 {
+    font-size: 50px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #ffffff; /* White text for better contrast */
+}
+
+.hero p {
+    font-size: 24px;
+    margin-bottom: 30px;
+    color: #ffffff; /* Accent color for the tagline */
+}
+
+.cta-buttons a {
+    text-decoration: none;
+    padding: 15px 30px;
+    background-color: #ffcc00;
+    color: black;
+    border-radius: 30px;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.cta-buttons a:hover {
+    background-color: #ff9900;
+}
+
+/* Keyframes for background color animation */
+@keyframes imageChange {
+    0% {
+        background-image: url('/images/bg1.jpg');
+    }
+    33% {
+        background-image: url('/images/bg2.jpg');
+    }
+    66% {
+        background-image: url('/images/bg3.jpg');
+    }
+    100% {
+        background-image: url('/images/bg1.jpg');
+    }
+}
+
+/* Products Section */
+.products {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.products h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+    font-weight: bold;
+}
+
+.product-list {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.product {
+    width: 30%;
+    margin: 10px;
+    text-align: center;
+    background: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.product img:hover {
+    transform: scale(1.05);
+}
+
+.product h3 {
+    margin-top: 15px;
+    font-size: 20px;
+}
+
+.product p {
+    margin-top: 10px;
+    font-size: 18px;
+    color: #ff9900;
+}
+
+.buy-btn, .view-btn {
+    display: inline-block;
+    margin: 10px 5px;
+    padding: 10px 20px;
+    color: white;
+    background-color: #333;
+    border-radius: 20px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.buy-btn:hover, .view-btn:hover {
+    background-color: #ffcc00;
+}

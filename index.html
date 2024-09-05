@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kohi Clothing</title>
+    <link rel="stylesheet" href="/style.css">
+    <script>
+        function changeBackground() {
+            const bg = document.querySelector('.hero');
+            const currentImage = bg.style.backgroundImage;
+            bg.style.backgroundImage = currentImage.includes('bg1.jpg') ? "url('/images/bg2.jpg')" : "url('/images/bg1.jpg')";
+        }
+    </script>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <img src="/images/logo.png" alt="Kohi Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/products.html">Shop</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" onclick="changeBackground()">
+        <div class="hero-text">
+            <h1>Explore the Universe with Clincial Clothing</h1>
+            <p>Find the Clothes that fits your journey.</p>
+            <div class="cta-buttons">
+                <a href="/products.html">Shop Now</a>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop - Kohi Clothing</title>
+    <link rel="stylesheet" href="/style.css">
+    <script src="https://js.stripe.com/v3/"></script> <!-- Stripe JS -->
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <img src="/images/logo.png" alt="Kohi Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/products.html">Shop</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Products Section -->
+    <section class="products">
+        <h2>Clinical Products</h2>
+        <div class="product-list">
+            <!-- Product 1 -->
+            <div class="product">
+                <img src="/images/product1.jpg" alt="Product 1">
+                <h3>Men's Jacket</h3>
+                <p>$120</p>
+                <button id="checkout-button-1" class="buy-btn">Buy</button>
+                <a href="#" class="view-btn">View</a>
+            </div>
+            <!-- Product 2 -->
+            <div class="product">
+                <img src="/images/product2.jpg" alt="Product 2">
+                <h3>Women's Hoodie</h3>
+                <p>$80</p>
+                <button id="checkout-button-2" class="buy-btn">Buy</button>
+                <a href="#" class="view-btn">View</a>
+            </div>
+            <!-- Product 3 -->
+            <div class="product">
+                <img src="/images/product3.jpg" alt="Product 3">
+                <h3>Classic T-Shirt</h3>
+                <p>$40</p>
+                <button id="checkout-button-3" class="buy-btn">Buy</button>
+                <a href="#" class="view-btn">View</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stripe Checkout Integration -->
+    <script type="text/javascript">
+        const stripe = Stripe('your-stripe-public-key'); // Replace with your Stripe public key
+
+        // Button 1 - Men's Jacket
+        document.getElementById('checkout-button-1').addEventListener('click', function () {
+            stripe.redirectToCheckout({
+                lineItems: [{
+                    price: 'price_1', // Replace with the actual Price ID from Stripe Dashboard
+                    quantity: 1
+                }],
+                mode: 'payment',
+                successUrl: 'https://yourdomain.com/success.html', // Replace with your success URL
+                cancelUrl: 'https://yourdomain.com/cancel.html', // Replace with your cancel URL
+            }).then(function (result) {
+                if (result.error) {
+                    alert(result.error.message);
+                }
+            });
+        });
+
+        // Button 2 - Women's Hoodie
+        document.getElementById('checkout-button-2').addEventListener('click', function () {
+            stripe.redirectToCheckout({
+                lineItems: [{
+                    price: 'price_2', // Replace with the actual Price ID from Stripe Dashboard
+                    quantity: 1
+                }],
+                mode: 'payment',
+                successUrl: 'https://yourdomain.com/success.html',
+                cancelUrl: 'https://yourdomain.com/cancel.html',
+            }).then(function (result) {
+                if (result.error) {
+                    alert(result.error.message);
+                }
+            });
+        });
+
+        // Button 3 - Classic T-Shirt
+        document.getElementById('checkout-button-3').addEventListener('click', function () {
+            stripe.redirectToCheckout({
+                lineItems: [{
+                    price: 'price_3', // Replace with the actual Price ID from Stripe Dashboard
+                    quantity: 1
+                }],
+                mode: 'payment',
+                successUrl: 'https://yourdomain.com/success.html',
+                cancelUrl: 'https://yourdomain.com/cancel.html',
+            }).then(function (result) {
+                if (result.error) {
+                    alert(result.error.message);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
